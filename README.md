@@ -14,6 +14,42 @@ catalogue.
 
 ### Γενική περιγραφή του data model
 
+```mermaid
+erDiagram
+
+book {
+    string title
+    string description
+    int yearPublished
+    int isbn
+    enum type
+    media file
+}
+
+quantity {
+    int copies_total
+    int copies_available
+}
+
+library {
+    string name
+    string description
+}
+
+publisher {
+    string name
+}
+
+author {
+    string name
+}
+
+library ||--|{ quantity : "library has many quantities"
+quantity }|--|| book : "quantity has one book"
+publisher ||--|{ book : "publisher has many books"
+author ||--|{ book : "author has many books"
+```
+
 | Τίτλος          | API Endpoint    | Περιγραφή |
 | --------------- | --------------- | --------- |
 | Βιβλιοθήκες     | `/libraries`    | Κάθε δομή βιβλιοθήκης έχει από ένα entry σε αυτό το table
