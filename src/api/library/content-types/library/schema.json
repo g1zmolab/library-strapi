@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "libraries",
+  "info": {
+    "singularName": "library",
+    "pluralName": "libraries",
+    "displayName": "Βιβλιοθήκες",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "quantities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quantity.quantity",
+      "mappedBy": "library"
+    }
+  }
+}

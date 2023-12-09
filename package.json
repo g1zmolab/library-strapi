@@ -1,0 +1,30 @@
+{
+  "name": "aperta-strapi",
+  "private": true,
+  "version": "0.1.5",
+  "description": "A Strapi application, configured for managing library catalogues",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "better-sqlite3": "8.5.2"
+  },
+  "dependencies": {
+    "@strapi/strapi": "4.14.2",
+    "pg": "^8.11.3"
+  },
+  "author": {
+    "name": "Gizmolab"
+  },
+  "strapi": {
+    "uuid": "71899c90-f2a5-4e50-96be-a9681e7fa6d5"
+  },
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Έντυπα",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {},
+      "required": true
+    },
+    "yearPublished": {
+      "type": "integer",
+      "pluginOptions": {},
+      "required": true
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "books"
+    },
+    "file": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {}
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "quantities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quantity.quantity",
+      "mappedBy": "book"
+    },
+    "publisher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publisher.publisher",
+      "inversedBy": "books"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Βιβλίο",
+        "Μπροσούρα",
+        "Περιοδικό"
+      ]
+    },
+    "isbn": {
+      "type": "biginteger",
+      "unique": true,
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+public/uploads/*
+sql
+
+.docker-compose.yml
+.editorconfig
+.env
+.env.example
+.git
+.tmp
+
+Makefile
