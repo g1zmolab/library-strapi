@@ -10,4 +10,8 @@ module.exports = ({ env }) => ({
       salt: env('TRANSFER_TOKEN_SALT'),
     },
   },
+  flags: {
+    nps: false, // disables surveys
+    promoteEE: false, // disables promotion of enterprise edition
+  },
 });
