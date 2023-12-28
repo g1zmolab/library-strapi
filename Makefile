@@ -1,17 +1,14 @@
-DOCKER_REPOSITORY ?= sotirismorf/aperta
+DOCKER_REPOSITORY ?= g1zmolab/gizmolib-strapi
 DOCKER_TAG ?= $(shell jq -r '.version' package.json)
 
-.PHONY: db
-db:
-	@docker compose up db
-
-.PHONY: prod
-prod:
+.PHONY: dev
+dev:
 	@docker compose up
 
 .PHONY: build
 build:
 	docker build --no-cache -t ${DOCKER_REPOSITORY}:${DOCKER_TAG} .
 
+.PHONY: push
 push:
 	docker push ${DOCKER_REPOSITORY}:${DOCKER_TAG}
